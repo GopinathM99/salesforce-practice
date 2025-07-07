@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="Product Price Calculator">
+        <div class="slds-m-around_medium">
+            <!-- Price Input -->
+            <lightning-input
+                type="number"
+                label="Product Price"
+                value={price}
+                onchange={handlePriceChange}
+            ></lightning-input>
+
+            <!-- Discount Percentage Input -->
+            <lightning-input
+                type="number"
+                label="Discount Percentage"
+                value={discountPercentage}
+                onchange={handleDiscountChange}
+            ></lightning-input>
+
+            <!-- Display Discounted Price -->
+            <p>Discounted Price: ${discountedPrice}</p>
+
+            <!-- Display High Discount Warning -->
+            <template if:true={isHighDiscount}>
+                <p class="slds-text-color_error">Warning: High discount applied (≥50%)!</p>
+            </template>
+
+            <!-- Reset Button -->
+            <lightning-button
+                label="Reset Values"
+                variant="brand"
+                onclick={resetValues}
+            ></lightning-button>
+        </div>
+    </lightning-card>
+</template>

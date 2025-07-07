@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Fetch Data from External Component">
+        <p class="slds-p-horizontal_medium">LWC Fetch Example</p> <br/>
+        <template if:true={data}>
+            <p class="slds-p-horizontal_medium"><strong>Cat fact:</strong> {catFact}</p>
+        </template>
+        <template if:true={error}>
+            <p class="slds-p-horizontal_medium slds-text-color_error">Error: {error}</p>
+        </template>
+    </lightning-card>
+    <lightning-button label="Click Me" variant="brand" onclick={fetchExternalData}></lightning-button>
+</template>

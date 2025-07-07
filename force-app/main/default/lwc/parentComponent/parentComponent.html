@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Parent to Child Communicaton Component">
+        <p class="slds-p-horizontal_medium">
+            message from child: {recievedMessage}
+        </p>
+        <br />
+        <lightning-input type="text" label="Message to Child" name="parentMessage" value={parentMessage} onchange={handleInputChange}></lightning-input>
+        <lightning-button label="Send to Child" onclick={updateChildMessage}></lightning-button>
+        <br />
+        <br />
+        <lightning-input type="text" label="Message to Other Child" name="parent2Message" value={parent2Message} onchange={handleInputChange}></lightning-input>
+        <br />
+        <c-child-component parent-input={parentMessage} onmessagefromchild={handleMessage} onreset={handleReset}></c-child-component>
+        <br />
+        <c-child2 other-child-message={parent2Message} ></c-child2>
+    </lightning-card>    
+</template>

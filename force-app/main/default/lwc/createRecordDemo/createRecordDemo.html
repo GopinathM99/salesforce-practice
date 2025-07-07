@@ -1,0 +1,7 @@
+<template>
+    <lightning-card title="LWC Create Record Example - uiRecordAPI.">
+        <lightning-input label="Account Name" name="Name" value={accName} onchange={handleChange}></lightning-input>
+        <lightning-input label="Phone" name="Phone" type="text" value={accPhone} onchange={handleChange}></lightning-input>
+        <lightning-button label="Create Account" variant="brand" onclick={createAccount}></lightning-button>
+    </lightning-card>
+</template>

@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Child Component">
+        <lightning-input type="text" label="Message to Parent" value={message} onchange={handleInputChange}></lightning-input>
+        <lightning-button label="Send to Parent" onclick={sendMessage}></lightning-button>
+        <lightning-button label="Reset" onclick={resetMessage}></lightning-button>
+    </lightning-card>
+    <br />
+    <lightning-card title="Message from Parent">
+        <!-- <p class="slds-p-horizontal_medium">Message :      {message}</p> -->
+        <p class="slds-p-horizontal_medium">Child -  Parent Input:      {parentInput}</p>
+        <p class="slds-p-horizontal_medium">Child - Parent Button:      {parentButton}</p>
+
+    </lightning-card>
+</template>

@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Chained Wire Example">
+        <p>Reactive Wire Example</p>
+        <template if:true={hasPicklistValues}>
+            <lightning-combobox
+                label="Account Type"
+                options={picklistValues.data.values}>
+            </lightning-combobox>
+        </template>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error">{error}</p>
+        </template>
+        </lightning-card>
+</template>

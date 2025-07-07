@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="LWC Database Table">
+        <lightning-combobox
+            name="exampleCombobox"
+            label="Select a Stage"
+            value={selectedStage}
+            options={stageOptions}
+            onchange={handleStageChange}>
+        </lightning-combobox>
+        <template if:true={opportunities}>
+            <!-- <template for:each={opportunities} for:item="opportunity">
+                 <p key={opportunity.Id}>Opportunity Name: {opportunity.Name}</p> 
+            </template>   -->
+            <lightning-datatable
+                    key={opportunity.Id}
+                    data={opportunities}
+                    columns={columns}
+                    key-field="Id">
+            </lightning-datatable> 
+        </template>
+        <template if:true={error}>
+            <p class="error">Error: {error}</p>
+        </template>
+    </lightning-card>
+    <lightning-button label="Fetch Opportunities" onclick={handleChange}></lightning-button>
+</template>

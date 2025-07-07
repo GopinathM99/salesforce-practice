@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Example Component">
+        <p class="slds-p-horizontal_medium">LWC Record Form Example.</p>
+        <lightning-record-form
+            object-api-name="Account"
+            record-id={recordId}
+            fields={fields}
+            mode="view"
+            onsuccess={handleSuccess}
+            onerror={handleError}>
+        </lightning-record-form>
+    </lightning-card>
+</template>
